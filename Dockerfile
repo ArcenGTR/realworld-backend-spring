@@ -13,8 +13,7 @@ RUN ./gradlew assemble --no-daemon
 # Runner
 FROM eclipse-temurin:25-jre-noble AS runner
 WORKDIR app/
-
-COPY --from=builder COPY --from=builder /app/service/build/libs/*[!p][!l][!a][!i][!n].jar app.jar app.jar
+COPY --from=builder /app/service/build/libs/*[!p][!l][!a][!i][!n].jar app.jar
 
 EXPOSE 8080
 
