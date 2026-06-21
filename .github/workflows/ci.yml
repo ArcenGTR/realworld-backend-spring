@@ -61,6 +61,16 @@ jobs:
             exit 1
           fi
 
+      - name: Debug API Tests Failure
+        if: failure()
+        run: |
+          echo "=== Diagnostyka kontenera testowego ==="
+          echo "Status kontenera:"
+          docker ps -a --filter name=app-container
+          echo "Logi z wnętrza aplikacji Spring Boot:"
+          docker logs app-container || true
+          echo "======================================="
+
       - name: Cleanup API Tests Containers
         if: always()
         run: |
