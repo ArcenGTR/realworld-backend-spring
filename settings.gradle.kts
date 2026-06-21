@@ -11,10 +11,6 @@ plugins {
     id("dev.aga.gradle.version-catalog-generator") version("4.2.0")
 }
 
-tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
-    archiveFileName.set("app.jar")
-}
-
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
