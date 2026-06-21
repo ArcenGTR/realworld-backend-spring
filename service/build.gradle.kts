@@ -65,7 +65,7 @@ springBoot {
 
 tasks {
     named<BootJar>("bootJar") {
-        archiveFileName.set("${rootProject.name}-${archiveVersion.get()}.${archiveExtension.get()}")
+        archiveFileName.set("app.jar")
     }
 
     named<BootBuildImage>("bootBuildImage") {
